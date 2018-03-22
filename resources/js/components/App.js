@@ -7,6 +7,7 @@ class App extends React.Component {
         <section>
           <div className="container">
             <h1>iUpload</h1>
+            <button className="btn btn-success">Select a photo...</button>
           </div>
         </section>
       </div>
