@@ -13,7 +13,8 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "react/jsx-uses-vars"
     ],
     "rules": {
         "indent": [
