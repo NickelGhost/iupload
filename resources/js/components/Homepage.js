@@ -14,15 +14,21 @@ class Homepage extends React.Component {
           <Row>
             <Col>
               <h2>Latest</h2>
-              <Row>
+              <Row noGutters>
                 <Col md="6" xl="4">
-                  <img className="rounded homepage-img" src="/apple.jpg" />
+                  <div className="homepage-img-wrapper">
+                    <img className="rounded homepage-img" src="/apple.jpg" />
+                  </div>
                 </Col>
                 <Col md="6" xl="4">
-                  <img className="rounded homepage-img" src="/cliff.jpg" />
+                  <div className="homepage-img-wrapper">
+                    <img className="rounded homepage-img" src="/cliff.jpg" />
+                  </div>
                 </Col>
                 <Col md="6" xl="4">
-                  <img className="rounded homepage-img" src="/phone.jpg" />
+                  <div className="homepage-img-wrapper">
+                    <img className="rounded homepage-img" src="/phone.jpg" />
+                  </div>
                 </Col>
               </Row>
             </Col>

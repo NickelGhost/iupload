@@ -28672,21 +28672,33 @@ var Homepage = function (_React$Component) {
               ),
               _react2.default.createElement(
                 _reactstrap.Row,
-                null,
+                { noGutters: true },
                 _react2.default.createElement(
                   _reactstrap.Col,
                   { md: '6', xl: '4' },
-                  _react2.default.createElement('img', { className: 'rounded homepage-img', src: '/apple.jpg' })
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'homepage-img-wrapper' },
+                    _react2.default.createElement('img', { className: 'rounded homepage-img', src: '/apple.jpg' })
+                  )
                 ),
                 _react2.default.createElement(
                   _reactstrap.Col,
                   { md: '6', xl: '4' },
-                  _react2.default.createElement('img', { className: 'rounded homepage-img', src: '/cliff.jpg' })
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'homepage-img-wrapper' },
+                    _react2.default.createElement('img', { className: 'rounded homepage-img', src: '/cliff.jpg' })
+                  )
                 ),
                 _react2.default.createElement(
                   _reactstrap.Col,
                   { md: '6', xl: '4' },
-                  _react2.default.createElement('img', { className: 'rounded homepage-img', src: '/phone.jpg' })
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'homepage-img-wrapper' },
+                    _react2.default.createElement('img', { className: 'rounded homepage-img', src: '/phone.jpg' })
+                  )
                 )
               )
             ),
