@@ -1,14 +1,16 @@
 import React from 'react'
 
+import MainNavbar from './MainNavbar.js'
+
 class App extends React.Component {
   render() {
     return (
       <div>
         <section>
-          <div className="container">
-            <h1>iUpload</h1>
-            <button className="btn btn-success">Select a photo...</button>
-          </div>
+          <MainNavbar />
+        </section>
+        <section>
+
         </section>
       </div>
     )
