@@ -1,1 +1,18 @@
-@import "~bootstrap/scss/bootstrap"
+@import "~bootstrap/scss/bootstrap";
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn.choose-photo {
+  background-color: #41bb60;
+  border: none;
+  border-radius: 0;
+  padding: 0.5rem 2.5rem;
+}
+
+.navbar.bluish {
+  background-color: #5094bb;
+}

@@ -1,4 +1,4 @@
-/*!
+@import url(https://fonts.googleapis.com/css?family=Montserrat);/*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.
@@ -6025,3 +6025,15 @@ a.text-dark:hover, a.text-dark:focus {
   .table-bordered th,
   .table-bordered td {
     border: 1px solid #ddd !important; } }
+
+* {
+  font-family: 'Montserrat', sans-serif; }
+
+.btn.choose-photo {
+  background-color: #41bb60;
+  border: none;
+  border-radius: 0;
+  padding: 0.5rem 2.5rem; }
+
+.navbar.bluish {
+  background-color: #5094bb; }

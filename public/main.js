@@ -28569,7 +28569,7 @@ var MainNavbar = function (_React$Component) {
         null,
         _react2.default.createElement(
           _reactstrap.Navbar,
-          { color: 'secondary', dark: true, expand: 'md' },
+          { className: 'bluish', dark: true, expand: 'md' },
           _react2.default.createElement(
             'div',
             { className: 'container' },
@@ -28590,7 +28590,7 @@ var MainNavbar = function (_React$Component) {
                   null,
                   _react2.default.createElement(
                     _reactstrap.Button,
-                    { color: 'success' },
+                    { className: 'choose-photo', color: 'success' },
                     'Choose a photo...'
                   )
                 )

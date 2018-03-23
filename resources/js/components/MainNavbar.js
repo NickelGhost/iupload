@@ -29,14 +29,14 @@ class MainNavbar extends React.Component {
   render() {
     return (
       <div>
-        <Navbar color="secondary" dark expand="md">
+        <Navbar className="bluish" dark expand="md">
           <div className="container">
             <NavbarBrand href="/">iUpload</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <Button color="success">Choose a photo...</Button>
+                  <Button className="choose-photo" color="success">Choose a photo...</Button>
                 </NavItem>
               </Nav>
             </Collapse>
