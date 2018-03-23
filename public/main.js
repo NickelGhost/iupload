@@ -28669,6 +28669,25 @@ var Homepage = function (_React$Component) {
                 'h2',
                 null,
                 'Latest'
+              ),
+              _react2.default.createElement(
+                _reactstrap.Row,
+                null,
+                _react2.default.createElement(
+                  _reactstrap.Col,
+                  { md: '6', xl: '4' },
+                  _react2.default.createElement('img', { className: 'rounded homepage-img', src: '/apple.jpg' })
+                ),
+                _react2.default.createElement(
+                  _reactstrap.Col,
+                  { md: '6', xl: '4' },
+                  _react2.default.createElement('img', { className: 'rounded homepage-img', src: '/cliff.jpg' })
+                ),
+                _react2.default.createElement(
+                  _reactstrap.Col,
+                  { md: '6', xl: '4' },
+                  _react2.default.createElement('img', { className: 'rounded homepage-img', src: '/phone.jpg' })
+                )
               )
             ),
             _react2.default.createElement(
