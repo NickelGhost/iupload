@@ -18385,6 +18385,10 @@ var _MainNavbar = __webpack_require__(33);
 
 var _MainNavbar2 = _interopRequireDefault(_MainNavbar);
 
+var _Homepage = __webpack_require__(53);
+
+var _Homepage2 = _interopRequireDefault(_Homepage);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18413,7 +18417,11 @@ var App = function (_React$Component) {
           null,
           _react2.default.createElement(_MainNavbar2.default, null)
         ),
-        _react2.default.createElement('section', null)
+        _react2.default.createElement(
+          'section',
+          null,
+          _react2.default.createElement(_Homepage2.default, null)
+        )
       );
     }
   }]);
@@ -28604,6 +28612,84 @@ PortalWithState.defaultProps = {
 };
 
 /* unused harmony default export */ var _unused_webpack_default_export = (PortalWithState);
+
+/***/ }),
+/* 52 */,
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactstrap = __webpack_require__(34);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Homepage = function (_React$Component) {
+  _inherits(Homepage, _React$Component);
+
+  function Homepage() {
+    _classCallCheck(this, Homepage);
+
+    return _possibleConstructorReturn(this, (Homepage.__proto__ || Object.getPrototypeOf(Homepage)).apply(this, arguments));
+  }
+
+  _createClass(Homepage, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          _reactstrap.Container,
+          null,
+          _react2.default.createElement(
+            _reactstrap.Row,
+            null,
+            _react2.default.createElement(
+              _reactstrap.Col,
+              null,
+              _react2.default.createElement(
+                'h2',
+                null,
+                'Latest'
+              )
+            ),
+            _react2.default.createElement(
+              _reactstrap.Col,
+              null,
+              _react2.default.createElement(
+                'h2',
+                null,
+                'Most popular'
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Homepage;
+}(_react2.default.Component);
+
+exports.default = Homepage;
 
 /***/ })
 /******/ ]);

@@ -1,6 +1,7 @@
 import React from 'react'
 
 import MainNavbar from './MainNavbar.js'
+import Homepage from './Homepage.js'
 
 class App extends React.Component {
   render() {
@@ -10,7 +11,7 @@ class App extends React.Component {
           <MainNavbar />
         </section>
         <section>
-
+          <Homepage />
         </section>
       </div>
     )
