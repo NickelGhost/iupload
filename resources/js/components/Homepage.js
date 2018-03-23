@@ -12,7 +12,7 @@ class Homepage extends React.Component {
       <div>
         <Container>
           <Row>
-            <Col>
+            <Col className="mb-4">
               <h2>Latest</h2>
               <Row noGutters>
                 <Col md="6" xl="4">
@@ -32,7 +32,7 @@ class Homepage extends React.Component {
                 </Col>
               </Row>
             </Col>
-            <Col>
+            <Col className="mb-4">
               <h2>Most popular</h2>
             </Col>
           </Row>

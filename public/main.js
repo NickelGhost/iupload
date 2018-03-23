@@ -28664,7 +28664,7 @@ var Homepage = function (_React$Component) {
             null,
             _react2.default.createElement(
               _reactstrap.Col,
-              null,
+              { className: 'mb-4' },
               _react2.default.createElement(
                 'h2',
                 null,
@@ -28704,7 +28704,7 @@ var Homepage = function (_React$Component) {
             ),
             _react2.default.createElement(
               _reactstrap.Col,
-              null,
+              { className: 'mb-4' },
               _react2.default.createElement(
                 'h2',
                 null,
