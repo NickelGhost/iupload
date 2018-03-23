@@ -18482,8 +18482,8 @@ var MainNavbar = function (_React$Component) {
           _reactstrap.Navbar,
           { className: 'bluish', dark: true, expand: 'md' },
           _react2.default.createElement(
-            'div',
-            { className: 'container' },
+            _reactstrap.Container,
+            null,
             _react2.default.createElement(
               _reactstrap.NavbarBrand,
               { href: '/' },

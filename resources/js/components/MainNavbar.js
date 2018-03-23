@@ -1,6 +1,7 @@
 import React from 'react'
 
 import {
+  Container,
   Collapse,
   Navbar,
   NavbarToggler,
@@ -30,7 +31,7 @@ class MainNavbar extends React.Component {
     return (
       <div>
         <Navbar className="bluish" dark expand="md">
-          <div className="container">
+          <Container>
             <NavbarBrand href="/">iUpload</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
@@ -40,7 +41,7 @@ class MainNavbar extends React.Component {
                 </NavItem>
               </Nav>
             </Collapse>
-          </div>
+          </Container>
         </Navbar>
       </div>
     )
