@@ -7,9 +7,10 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem,
-  Button
+  NavItem
 } from 'reactstrap'
+
+import UploadButton from './UploadButton.js'
 
 class MainNavbar extends React.Component {
   constructor(props) {
@@ -37,7 +38,7 @@ class MainNavbar extends React.Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <Button className="choose-photo" color="success">Choose a photo...</Button>
+                  <UploadButton />
                 </NavItem>
               </Nav>
             </Collapse>
