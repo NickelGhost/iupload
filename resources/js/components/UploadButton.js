@@ -1,7 +1,9 @@
 /* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 
 import React from 'react';
+
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import Dropzone from 'react-dropzone';
 
 class UploadButton extends React.Component {
   constructor(props) {
@@ -26,7 +28,9 @@ class UploadButton extends React.Component {
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
           <ModalHeader toggle={this.toggle}>Upload Photos</ModalHeader>
           <ModalBody>
-            Placeholder
+            <Dropzone className="dropzone">
+              <p className="text-center">Click to select a file, or drop one here</p>
+            </Dropzone>
           </ModalBody>
           <ModalFooter>
             <Button className="choose-photo" color="success" onClick={this.toggle}>Upload</Button>
