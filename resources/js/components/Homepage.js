@@ -4,7 +4,7 @@ import {
   Col,
   Container,
   Row
-} from 'reactstrap';
+} from 'reactstrap'
 
 class Homepage extends React.Component {
   render() {
@@ -42,4 +42,4 @@ class Homepage extends React.Component {
   }
 }
 
-export default Homepage;
+export default Homepage

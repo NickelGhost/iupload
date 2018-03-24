@@ -1,31 +1,31 @@
 /* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 
-import React from 'react';
+import React from 'react'
 
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import Dropzone from 'react-dropzone';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
+import Dropzone from 'react-dropzone'
 
 class UploadButton extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       modal: false,
       files: []
-    };
+    }
 
-    this.toggle = this.toggle.bind(this);
+    this.toggle = this.toggle.bind(this)
   }
 
   toggle() {
     this.setState({
       modal: !this.state.modal
-    });
+    })
   }
 
   onDrop(files) {
     this.setState({
       files
-    });
+    })
   }
 
   render() {
@@ -49,8 +49,8 @@ class UploadButton extends React.Component {
           </ModalBody>
         </Modal>
       </div>
-    );
+    )
   }
 }
 
-export default UploadButton;
+export default UploadButton
