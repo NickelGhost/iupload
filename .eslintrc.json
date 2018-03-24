@@ -13,8 +13,7 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react",
-        "react/jsx-uses-vars"
+        "react"
     ],
     "rules": {
         "indent": [
@@ -34,6 +33,7 @@
             "never"
         ],
         "no-console": "off",
-        "no-unused-vars": "warn"
+        "no-unused-vars": "warn",
+        "react/jsx-uses-vars": 1
     }
 }
