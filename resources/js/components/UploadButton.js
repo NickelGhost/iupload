@@ -36,6 +36,18 @@ class UploadButton extends React.Component {
       'Click to select a file, or drop one here' :
       'Please wait while the files are being uploaded'
 
+    const files = this.state.files
+    const droppedFileList = files.length > 0 ? (
+      <aside>
+        <h3>Dropped files</h3>
+        <ul className="photo-list">
+          {
+            files.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)
+          }
+        </ul>
+      </aside>
+    ) : null
+
     return (
       <div>
         <Button className="choose-photo" color="success" onClick={this.toggle}>Choose a photo...</Button>
@@ -45,14 +57,7 @@ class UploadButton extends React.Component {
             <Dropzone className="dropzone mb-4" onDrop={this.onDrop.bind(this)} disabled={!dropzone}>
               <p className="text-center">{dropzoneText}</p>
             </Dropzone>
-            <aside>
-              <h3>Dropped files</h3>
-              <ul className="photo-list">
-                {
-                  this.state.files.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)
-                }
-              </ul>
-            </aside>
+            {droppedFileList}
           </ModalBody>
         </Modal>
       </div>
