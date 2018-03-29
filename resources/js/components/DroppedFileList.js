@@ -25,6 +25,14 @@ class DroppedFileList extends React.Component {
                       {f.name} - {f.size} bytes
                     </div>
                   </div>
+                  <div className="row options">
+                    <div className="col">
+                      <div class="px-3 py-2 float-right">
+                        <button className="btn btn-info">View</button>
+                        <button className="btn btn-danger ml-2">Delete</button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </li>
             ))
