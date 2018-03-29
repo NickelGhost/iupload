@@ -16,7 +16,7 @@ class DroppedFileList extends React.Component {
           {
             files.map(f => (
               <li key={f.name}>
-                <div className="item mb-2">
+                <div className="item mb-3">
                   <div className="row no-gutters">
                     <div className="col-3">
                       <img className="img" src="/cliff.jpg" />
