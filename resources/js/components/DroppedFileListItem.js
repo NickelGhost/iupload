@@ -21,7 +21,7 @@ class DroppedFileListItem extends React.Component {
     const f = this.props.file
 
     return (
-      <li key={f.name}>
+      <li>
         <div className="item mb-3">
           <div className="row no-gutters">
             <div className="col-3">

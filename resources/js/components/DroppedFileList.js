@@ -15,7 +15,7 @@ class DroppedFileList extends React.Component {
         <h3>Dropped files</h3>
         <ul className="photo-list">
           {
-            files.map(f => <DroppedFileListItem file={f} />)
+            files.map(f => <DroppedFileListItem key={f.name} file={f} />)
           }
         </ul>
       </aside>
