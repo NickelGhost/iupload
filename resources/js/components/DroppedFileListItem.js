@@ -28,7 +28,7 @@ class DroppedFileListItem extends React.Component {
               <img className="img" src="/cliff.jpg" />
             </div>
             <div className="col name">
-              {f.name} - {f.size} bytes
+              {f.name}
             </div>
           </div>
           <div className="row options">
