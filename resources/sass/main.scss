@@ -43,4 +43,16 @@
   overflow: hidden;
   list-style-type: none;
   padding: 0;
+
+  .item {
+    background-color: lightgray;
+
+    .img {
+      width: 100%;
+    }
+
+    .name {
+      padding: 0.5rem 1rem;
+    }
+  }
 }
