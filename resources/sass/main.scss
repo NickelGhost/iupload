@@ -2,6 +2,8 @@
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
+$darkgray: rgb(40%, 40%, 40%);
+
 * {
   font-family: 'Montserrat', sans-serif;
 }
@@ -27,13 +29,13 @@
 .homepage-img-wrapper {
   padding: 0.25rem;
   margin: 0.25rem;
-  background-color: rgb(102, 102, 102);
+  background-color: $darkgray;
   border-radius: 0.25rem;
 }
 
 .dropzone {
   width: 100%;
-  border: 2px solid darkgray;
+  border: 2px solid $darkgray;
   border-radius: 0.25rem;
   padding: 0.75rem;
   height: 8rem;
@@ -56,7 +58,7 @@
     }
 
     .options {
-      background-color: rgb(32%, 32%, 32%);
+      background-color: $darkgray;
     }
   }
 }
