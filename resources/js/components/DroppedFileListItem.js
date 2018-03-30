@@ -33,7 +33,7 @@ class DroppedFileListItem extends React.Component {
           </div>
           <div className="row options">
             <div className="col">
-              <div className="px-3 py-2 float-right">
+              <div className="px-3 py-1 float-right">
                 <button className="btn btn-info">View</button>
                 <button className="btn btn-danger ml-2" onClick={this.toggleDelete}>Delete</button>
                 <Modal isOpen={this.state.deleteModal} toggle={this.toggleDelete} className={this.props.className}>
