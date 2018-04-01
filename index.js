@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const fs = require('fs')
 const fileUpload = require('express-fileupload')
 const cors = require('cors')
 
@@ -12,14 +13,19 @@ const port = 3000
 app.use(express.static(publicDir))
 
 app.post('/api/images/upload', (req, res) => {
-  console.log(req)
-  let imageFile = req.files.file
+  const file = req.files.file
+  const extension = file.mimetype.split('/')[1]
+  let num, path
 
-  imageFile.mv(`${__dirname}/public/lol.jpg`, function (err) {
+  do {
+    num = Math.random().toString(36).substring(7)
+    path = `${publicDir}/upload/${num}.${extension}`
+  } while (fs.existsSync(path))
+
+  file.mv(path, function (err) {
     if (err) {
       return res.status(500).send(err)
     }
-
     res.send('yup')
   })
 })
