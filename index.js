@@ -12,21 +12,32 @@ const port = 3000
 
 app.use(express.static(publicDir))
 
+app.get('/api/images/:id', (req, res) => {
+  const path = `${publicDir}/upload/${req.params.id}`
+  if (fs.existsSync(path)) {
+    const url = `/upload/${req.params.id}`
+    return res.json({ url })
+  } else {
+    return res.status(404).send('not found')
+  }
+})
+
 app.post('/api/images/upload', (req, res) => {
   const file = req.files.file
   const extension = file.mimetype.split('/')[1]
-  let num, path
+  let num, name, path
 
   do {
     num = Math.random().toString(36).substring(7)
-    path = `${publicDir}/upload/${num}.${extension}`
+    name = `${num}.${extension}`
+    path = `${publicDir}/upload/${name}`
   } while (fs.existsSync(path))
 
   file.mv(path, function (err) {
     if (err) {
       return res.status(500).send(err)
     }
-    res.json({ name: num })
+    res.json({ name: name })
   })
 })
 
