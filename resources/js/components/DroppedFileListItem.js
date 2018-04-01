@@ -35,7 +35,7 @@ class DroppedFileListItem extends React.Component {
             <div className="col">
               <div className="px-3 py-1 float-right">
                 <Button color="info" href={`/${f.name}`}>View</Button>
-                <button className="btn btn-danger ml-2" onClick={this.toggleDelete}>Delete</button>
+                <Button color="danger" onClick={this.toggleDelete}>Delete</Button>
                 <Modal isOpen={this.state.deleteModal} toggle={this.toggleDelete} className={this.props.className}>
                   <ModalHeader toggle={this.toggleDelete}>Are you sure?</ModalHeader>
                   <ModalFooter>
