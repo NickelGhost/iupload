@@ -26,7 +26,7 @@ app.post('/api/images/upload', (req, res) => {
     if (err) {
       return res.status(500).send(err)
     }
-    res.send('yup')
+    res.json({ name: num })
   })
 })
 

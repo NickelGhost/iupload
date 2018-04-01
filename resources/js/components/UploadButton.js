@@ -27,7 +27,6 @@ class UploadButton extends React.Component {
 
   onDrop(files) {
     this.setState({
-      files,
       dropzone: false
     })
     const data = new FormData()
@@ -35,9 +34,11 @@ class UploadButton extends React.Component {
     axios.post('/api/images/upload', data)
       .then((res) => {
         this.setState({
-          dropzone: true
+          dropzone: true,
+          files: [...this.state.files, {
+            name: res.data.name
+          }]
         })
-        alert('Uploaded')
       })
   }
 
