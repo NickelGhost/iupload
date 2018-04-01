@@ -1,5 +1,7 @@
 import React from 'react'
 
+import axios from 'axios'
+
 import { Button, Modal, ModalHeader, ModalBody } from 'reactstrap'
 import Dropzone from 'react-dropzone'
 
@@ -28,6 +30,15 @@ class UploadButton extends React.Component {
       files,
       dropzone: false
     })
+    const data = new FormData()
+    data.append('file', files[0])
+    axios.post('/api/images/upload', data)
+      .then((res) => {
+        this.setState({
+          dropzone: true
+        })
+        alert('Uploaded')
+      })
   }
 
   render() {
