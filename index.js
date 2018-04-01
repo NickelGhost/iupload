@@ -6,7 +6,7 @@ const port = 3000
 
 app.use(express.static(publicDir))
 
-app.get('*', function (req, res) {
+app.get('*', (req, res) => {
   res.sendFile(`${publicDir}/index.html`)
 })
 
