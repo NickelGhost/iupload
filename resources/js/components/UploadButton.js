@@ -29,17 +29,19 @@ class UploadButton extends React.Component {
     this.setState({
       dropzone: false
     })
-    const data = new FormData()
-    data.append('file', files[0])
-    axios.post('/api/images/upload', data)
-      .then((res) => {
-        this.setState({
-          dropzone: true,
-          files: [...this.state.files, {
-            name: res.data.name
-          }]
+    for (const file of files) {
+      const data = new FormData()
+      data.append('file', file)
+      axios.post('/api/images/upload', data)
+        .then((res) => {
+          this.setState({
+            dropzone: true,
+            files: [...this.state.files, {
+              name: res.data.name
+            }]
+          })
         })
-      })
+    }
   }
 
   render() {
