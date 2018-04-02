@@ -13,6 +13,19 @@ const port = 3000
 
 app.use(express.static(publicDir))
 
+app.get('/api/images', (req, res) => {
+  fs.readdir(`${publicDir}/upload/thumbnails`, (err, files) => {
+    let images = []
+    files.splice(0, 1) //removes .gitkeep
+    for (const file of files) {
+      images.unshift({
+        url: `/upload/thumbnails/${file}`
+      })
+    }
+    return res.json(images)
+  })
+})
+
 app.get('/api/images/:id', (req, res) => {
   const path = `${publicDir}/upload/${req.params.id}`
   if (fs.existsSync(path)) {
