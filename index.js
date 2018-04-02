@@ -3,6 +3,7 @@ const app = express()
 const fs = require('fs')
 const fileUpload = require('express-fileupload')
 const cors = require('cors')
+const gm = require('gm')
 
 app.use(cors())
 app.use(fileUpload())
@@ -28,19 +29,28 @@ app.get('/api/images/:id', (req, res) => {
 app.post('/api/images/upload', (req, res) => {
   const file = req.files.file
   const extension = file.mimetype.split('/')[1]
-  let num, name, path
+  let num, name, path, thumbnailPath
 
   do {
     num = Math.random().toString(36).substring(7)
     name = `${num}.${extension}`
     path = `${publicDir}/upload/${name}`
+    thumbnailPath = `${publicDir}/upload/thumbnails/${name}`
   } while (fs.existsSync(path))
 
   file.mv(path, function (err) {
     if (err) {
       return res.status(500).send(err)
     }
-    res.json({ name: name })
+    gm(path)
+      .resizeExact(250, 250, '!')
+      .write(thumbnailPath, (err) => {
+        if (err) {
+          fs.unlinkSync(path)
+          return res.status(500).send(err)
+        }
+        return res.json({ name })
+      })
   })
 })
 
