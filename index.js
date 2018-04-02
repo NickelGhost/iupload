@@ -19,7 +19,8 @@ app.get('/api/images', (req, res) => {
     files.splice(0, 1) //removes .gitkeep
     for (const file of files) {
       images.unshift({
-        url: `/upload/thumbnails/${file}`
+        url: `/upload/thumbnails/${file}`,
+        name: file
       })
     }
     return res.json(images)
