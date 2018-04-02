@@ -8,12 +8,7 @@ import {
 import MainNavbar from './MainNavbar.js'
 
 import Homepage from './Homepage.js'
-
-const Show = ({ match }) => (
-  <div>
-    <h2>Showing {match.params.id}</h2>
-  </div>
-)
+import Show from './Show.js'
 
 class App extends React.Component {
   render() {
