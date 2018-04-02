@@ -23,10 +23,12 @@ class Show extends React.Component {
   }
 
   render() {
+    const image = this.state.image
     return (
       <div>
         <Container>
-          <img className="w-100" src={this.state.image.url} />
+          <h2>{image.name}</h2>
+          <img className="w-100" src={image.url} />
         </Container>
       </div>
     )

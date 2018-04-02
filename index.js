@@ -16,7 +16,10 @@ app.get('/api/images/:id', (req, res) => {
   const path = `${publicDir}/upload/${req.params.id}`
   if (fs.existsSync(path)) {
     const url = `/upload/${req.params.id}`
-    return res.json({ url })
+    return res.json({
+      name: req.params.id,
+      url
+    })
   } else {
     return res.status(404).send('not found')
   }
