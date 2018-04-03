@@ -1,8 +1,11 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const extractSass = new ExtractTextPlugin({
   filename: 'public/main.css'
 })
+
+const uglifyJs = new UglifyJsPlugin()
 
 function sassRules() {
   return [
@@ -36,6 +39,6 @@ module.exports = {
     rules: sassRules().concat(scriptRules())
   },
   plugins: [
-    extractSass
+    extractSass, uglifyJs
   ]
 }
