@@ -8,12 +8,15 @@ $darkgray: rgb(40%, 40%, 40%);
   font-family: 'Montserrat', sans-serif;
 }
 
-.btn.choose-photo {
-  background-color: #41bb60;
+.btn {
   border: none;
+  box-shadow: none !important;
   border-radius: 0;
   padding: 0.5rem 2.5rem;
-  box-shadow: none !important;
+}
+
+.btn.choose-photo {
+  background-color: #41bb60;
 }
 
 .navbar.bluish {
