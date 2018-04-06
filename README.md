@@ -1,5 +1,4 @@
 # iupload
-simple image uploading platform
 
 You'll need to install Node.js and `graphicsmagick` on your OS in order for the website to run
 
