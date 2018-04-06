@@ -36,9 +36,7 @@ class UploadButton extends React.Component {
         .then((res) => {
           this.setState({
             dropzone: true,
-            files: [...this.state.files, {
-              name: res.data.name
-            }]
+            files: [...this.state.files, res.data]
           })
         })
     }
