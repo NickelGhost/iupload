@@ -63,7 +63,8 @@ app.post('/api/images/upload', (req, res) => {
           fs.unlinkSync(path)
           return res.status(500).send(err)
         }
-        return res.json({ name })
+        const thumbnail = `/upload/thumbnails/${name}`
+        return res.json({ name, thumbnail })
       })
   })
 })
