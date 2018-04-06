@@ -9,7 +9,7 @@ class DroppedFileListItem extends React.Component {
         <div className="item mb-3">
           <div className="row no-gutters">
             <div className="col-3">
-              <img className="img" src="/cliff.jpg" />
+              <img className="img" src={f.thumbnail} />
             </div>
             <div className="col name">
               {f.name}
