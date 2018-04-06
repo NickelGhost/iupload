@@ -25,12 +25,12 @@ class Homepage extends React.Component {
   }
 
   render() {
-    let latest = []
+    let imagesJsx = []
 
     for (const image of this.state.images) {
       const link = '/' + image.name
-      latest.push(
-        <Col md="6" xl="4">
+      imagesJsx.push(
+        <Col md="3" xl="2">
           <div className="homepage-img-wrapper">
             <a href={link}>
               <img className="rounded homepage-img" src={image.url} />
@@ -43,16 +43,9 @@ class Homepage extends React.Component {
     return (
       <div>
         <Container>
-          <Row>
-            <Col className="mb-4">
-              <h2>Latest</h2>
-              <Row noGutters>
-                {latest}
-              </Row>
-            </Col>
-            <Col className="mb-4">
-              <h2>Most popular</h2>
-            </Col>
+          <h2>Uploaded Images</h2>
+          <Row noGutters>
+            {imagesJsx}
           </Row>
         </Container>
       </div>
