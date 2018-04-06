@@ -1,25 +1,9 @@
 import React from 'react'
-import { Button, Modal, ModalHeader, ModalFooter } from 'reactstrap'
+import { Button } from 'reactstrap'
 
 class DroppedFileListItem extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      deleteModal: false
-    }
-
-    this.toggleDelete = this.toggleDelete.bind(this)
-  }
-
-  toggleDelete() {
-    this.setState({
-      deleteModal: !this.state.deleteModal
-    })
-  }
-
   render() {
     const f = this.props.file
-
     return (
       <li>
         <div className="item mb-3">
@@ -35,14 +19,6 @@ class DroppedFileListItem extends React.Component {
             <div className="col">
               <div className="px-3 py-1 float-right">
                 <Button color="info" href={`/${f.name}`}>View</Button>
-                <Button color="danger" onClick={this.toggleDelete}>Delete</Button>
-                <Modal isOpen={this.state.deleteModal} toggle={this.toggleDelete} className={this.props.className}>
-                  <ModalHeader toggle={this.toggleDelete}>Are you sure?</ModalHeader>
-                  <ModalFooter>
-                    <Button onClick={this.toggleDelete}>No</Button>{' '}
-                    <Button color="danger" onClick={this.toggleDelete}>Yes</Button>
-                  </ModalFooter>
-                </Modal>
               </div>
             </div>
           </div>
