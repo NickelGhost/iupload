@@ -30,7 +30,7 @@ class Homepage extends React.Component {
     for (const image of this.state.images) {
       const link = '/' + image.name
       imagesJsx.push(
-        <Col md="3" xl="2">
+        <Col md="3" xl="2" key={image.url}>
           <div className="homepage-img-wrapper">
             <a href={link}>
               <img className="rounded homepage-img" src={image.url} />
