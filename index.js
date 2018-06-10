@@ -43,28 +43,29 @@ app.post('/api/images/upload', (req, res) => {
   let num, name, path, thumbnailPath
 
   do {
-    num = Math.random().toString(36).substring(7)
-    name = `${num}.${extension}`
-    path = `${publicDir}/upload/${name}`
-    thumbnailPath = `${publicDir}/upload/thumbnails/${name}`
-  } while (fs.existsSync(path))
+    num = Math.random().toString(36).substring(7);
+    name = `${num}.${extension}`;
+    path = `${publicDir}/upload/${name}`;
+    thumbnailPath = `${publicDir}/upload/thumbnails/${name}`;
+  } while (fs.existsSync(path));
 
-  file.mv(path, function (err) {
-    if (err) {
-      return res.status(500).send(err)
+  file.mv(path, (mvErr) => {
+    if (mvErr) {
+      return res.status(500).send(mvErr);
     }
     gm(path)
       .resizeExact(250, 250, '!')
-      .write(thumbnailPath, (err) => {
-        if (err) {
-          fs.unlinkSync(path)
-          return res.status(500).send(err)
+      .write(thumbnailPath, (writeErr) => {
+        if (writeErr) {
+          fs.unlinkSync(path);
+          return res.status(500).send(writeErr);
         }
-        const thumbnail = `/upload/thumbnails/${name}`
-        return res.json({ name, thumbnail })
-      })
-  })
-})
+        const thumbnail = `/upload/thumbnails/${name}`;
+        return res.json({ name, thumbnail });
+      });
+    return true;
+  });
+});
 
 app.get('*', (req, res) => {
   res.sendFile(`${publicDir}/index.html`);
