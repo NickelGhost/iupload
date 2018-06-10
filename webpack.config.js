@@ -19,7 +19,7 @@ function sassRules() {
 function scriptRules() {
   return [
     {
-      test: /\.js$/,
+      test: /\.(js|jsx)$/,
       exclude: [/node_modules/],
       loader: 'babel-loader',
       options: { presets: ['env', 'react'] }
@@ -30,7 +30,7 @@ function scriptRules() {
 module.exports = {
   entry: [
     './resources/sass/main.scss',
-    './resources/js/main.js'
+    './resources/js/main.jsx'
   ],
   output: {
     filename: 'public/main.js'
@@ -40,5 +40,8 @@ module.exports = {
   },
   plugins: [
     extractSass, uglifyJs
-  ]
+  ],
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
 }
