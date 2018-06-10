@@ -40,7 +40,10 @@ app.get('/api/images/:id', (req, res) => {
 app.post('/api/images/upload', (req, res) => {
   const { file } = req.files;
   const extension = file.mimetype.split('/')[1];
-  let num, name, path, thumbnailPath
+  let num;
+  let name;
+  let path;
+  let thumbnailPath;
 
   do {
     num = Math.random().toString(36).substring(7);
