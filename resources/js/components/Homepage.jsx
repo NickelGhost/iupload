@@ -5,7 +5,7 @@ import axios from 'axios';
 import {
   Col,
   Container,
-  Row
+  Row,
 } from 'reactstrap';
 
 class Homepage extends React.Component {

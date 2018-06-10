@@ -7,7 +7,7 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem
+  NavItem,
 } from 'reactstrap';
 
 import UploadButton from './UploadButton';
