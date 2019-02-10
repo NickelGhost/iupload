@@ -1,5 +1,8 @@
 node_modules
 public/upload/*
 !public/upload/.gitkeep
+!public/upload/thumbnails
+public/upload/thumbnails/*
+!public/upload/thumbnails/.gitkeep
 public/main.css
 public/main.js
