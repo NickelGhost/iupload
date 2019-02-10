@@ -11,14 +11,10 @@ function DroppedFileListItem({ file }) {
             <img className="img" src={file.thumbnail} alt="user upload" />
           </div>
           <div className="col name">
-            {file.name}
-          </div>
-        </div>
-        <div className="row options">
-          <div className="col">
-            <div className="px-3 py-1 float-right">
-              <Button color="info" href={`/${file.name}`}>View</Button>
+            <div>
+              {file.name}
             </div>
+            <Button color="info" href={`/${file.name}`}>View</Button>
           </div>
         </div>
       </div>
