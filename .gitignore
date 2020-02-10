@@ -6,3 +6,4 @@ public/upload/thumbnails/*
 !public/upload/thumbnails/.gitkeep
 public/main.css
 public/main.js
+public/*.map

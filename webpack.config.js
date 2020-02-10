@@ -1,47 +1,50 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const path = require('path');
 
-const extractSass = new ExtractTextPlugin({
-  filename: 'public/main.css'
-})
+const TerserJSPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-const uglifyJs = new UglifyJsPlugin()
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-function sassRules() {
-  return [
-    {
-      test: /\.(sass|scss)$/,
-      loader: extractSass.extract(['css-loader', 'sass-loader'])
-    }
-  ]
-}
-
-function scriptRules() {
-  return [
-    {
-      test: /\.(js|jsx)$/,
-      exclude: [/node_modules/],
-      loader: 'babel-loader',
-      options: { presets: ['env', 'react'] }
-    }
-  ]
-}
+const mode = process.env.NODE_ENV || 'development';
+const prod = mode === 'production';
 
 module.exports = {
-  entry: [
-    './resources/sass/main.scss',
-    './resources/js/main.jsx'
-  ],
-  output: {
-    filename: 'public/main.js'
+  mode,
+  devtool: prod ? false : 'source-map',
+  entry: {
+    bundle: ['./resources/js/main.jsx'],
   },
-  module: {
-    rules: sassRules().concat(scriptRules())
+  output: {
+    path: path.resolve(__dirname, 'public'),
+    filename: 'main.js',
   },
   plugins: [
-    extractSass, uglifyJs
+    new MiniCssExtractPlugin({
+      filename: 'main.css',
+    }),
   ],
   resolve: {
     extensions: ['.js', '.jsx'],
   },
-}
+  optimization: {
+    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: [/node_modules/],
+        loader: 'babel-loader',
+        options: { presets: ['env', 'react'] },
+      },
+      {
+        test: /\.(sass|scss)$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
+      },
+    ],
+  },
+};
